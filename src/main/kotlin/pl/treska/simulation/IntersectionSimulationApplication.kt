@@ -49,7 +49,5 @@ fun main(args: Array<String>) {
 
 	commands.forEach { CommandExecutor.execute(it) }
 
-	StepCommand.backlog.stepStatuses.forEach { println(it) }
-
 	OutputParser(objectMapper).saveProgramOutput(outputpath)
 }
