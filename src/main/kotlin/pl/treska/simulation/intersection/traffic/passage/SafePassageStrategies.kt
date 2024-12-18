@@ -22,3 +22,9 @@ class ForwardAndRightWithoutArrowSafePassageStrategy: SafePassageStrategy {
         (vehicleB.roadDirection == RoadDirection.FORWARD && vehicleA.roadDirection == RoadDirection.RIGHT &&
                 vehicleA.startRoad.position.next() != vehicleB.startRoad.position)
 }
+
+class ForwardAndRightWithArrowSafePassageStrategy: SafePassageStrategy {
+    override fun canPass(vehicleA: Vehicle, vehicleB: Vehicle): Boolean =
+        (vehicleA.roadDirection == RoadDirection.FORWARD && vehicleB.roadDirection == RoadDirection.RIGHT) ||
+        (vehicleB.roadDirection == RoadDirection.FORWARD && vehicleA.roadDirection == RoadDirection.RIGHT)
+}

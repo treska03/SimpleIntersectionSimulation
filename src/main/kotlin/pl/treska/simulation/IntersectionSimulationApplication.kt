@@ -2,11 +2,8 @@ package pl.treska.simulation
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import pl.treska.simulation.intersection.Intersection
-import pl.treska.simulation.intersection.Road
-import pl.treska.simulation.intersection.RoadPosition
 import pl.treska.simulation.command.CommandExecutor
 import pl.treska.simulation.parser.InputParser
-import pl.treska.simulation.command.StepCommand
 import pl.treska.simulation.intersection.traffic.passage.ForwardAndRightWithoutArrowSafePassageStrategy
 import pl.treska.simulation.intersection.traffic.passage.SamePathButReversedSafePassageStrategy
 import pl.treska.simulation.intersection.traffic.passage.TwoRightsSafePassageStrategy
@@ -26,7 +23,7 @@ fun main(args: Array<String>) {
 		listOf(
 			TwoRightsSafePassageStrategy(),
 			SamePathButReversedSafePassageStrategy(),
-			ForwardAndRightWithoutArrowSafePassageStrategy()
+			ForwardAndRightWithoutArrowSafePassageStrategy() // or ForwardAndRightWithArrowSafePassageStrategy() if you want arrow
 		)
 	)
 
